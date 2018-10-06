@@ -1,0 +1,5 @@
+/node_modules
+
+# Assets build with yarn build
+/public/html
+/public/static
