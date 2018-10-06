@@ -1,6 +1,6 @@
 const { join } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 
 const rootDir = join(__dirname, './');
 
@@ -35,17 +35,17 @@ module.exports = {
         new ExtractTextPlugin({
             filename: './static/css/[name].css'
         }),
-        new HtmlWebpackPlugin({
-            template: './assets/html/index.html',
-            filename: './html/index.html',
-            hash: true,
-            inject: false,
-        }),
-        new HtmlWebpackPlugin({
-            template: './assets/html/second.html',
-            filename: './html/second.html',
-            hash: true,
-            inject: false,
+        new NunjucksWebpackPlugin({
+            templates: [
+                {
+                    from: "./assets/templates/index.njk",
+                    to: "./html/index.html"
+                },
+                {
+                    from: "./assets/templates/second.njk",
+                    to: "./html/second.html"
+                }
+            ]
         }),
     ]
 };

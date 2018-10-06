@@ -1,0 +1,18 @@
+{% extends "./base.njk" %}
+
+{% block styles %}
+  <link href="../static/css/second.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block javascripts %}
+  <script type="text/javascript" src="../static/js/second.js"></script>
+{% endblock javascripts %}
+
+{% block content %}
+  <div>Other page</div>
+  <a href="./index.html">Index page</a>
+  <svg class="icon">
+    <use xlink:href="#icon-maintenance"></use>
+  </svg>
+  <script type="text/javascript" src="../static/js/second.js"></script>
+{% endblock content %}
