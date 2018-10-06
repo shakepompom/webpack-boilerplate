@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: join(rootDir, './public'),
-        filename: './static/js/[name].[hash].js'
+        filename: './static/js/[name].js'
     },
     module: {
         rules: [
@@ -33,17 +33,19 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: './static/css/[name].[hash].css'
+            filename: './static/css/[name].css'
         }),
         new HtmlWebpackPlugin({
             template: './assets/html/index.html',
             filename: './html/index.html',
-            hash: true
+            hash: true,
+            inject: false,
         }),
         new HtmlWebpackPlugin({
             template: './assets/html/second.html',
             filename: './html/second.html',
-            hash: true
-        })
+            hash: true,
+            inject: false,
+        }),
     ]
 };
