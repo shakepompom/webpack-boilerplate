@@ -63,6 +63,7 @@ module.exports = {
         })
     ],
     devServer: {
+        clientLogLevel: 'none',
         watchOptions: {
             poll: true
         }
