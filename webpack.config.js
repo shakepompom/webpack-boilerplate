@@ -61,5 +61,10 @@ module.exports = {
             },
             prefix: 'icon-'
         })
-    ]
+    ],
+    devServer: {
+        watchOptions: {
+            poll: true
+        }
+    }
 };
