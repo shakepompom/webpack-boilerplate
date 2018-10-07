@@ -41,11 +41,11 @@ module.exports = {
             templates: [
                 {
                     from: "./assets/templates/index.njk",
-                    to: "./html/index.html"
+                    to: "./index.html"
                 },
                 {
                     from: "./assets/templates/second.njk",
-                    to: "./html/second.html"
+                    to: "./second.html"
                 }
             ]
         }),

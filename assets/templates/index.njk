@@ -1,17 +1,17 @@
 {% extends "./base.njk" %}
 
 {% block styles %}
-  <link href="../static/css/index.css" rel="stylesheet">
+  <link href="./static/css/index.css" rel="stylesheet">
 {% endblock styles %}
 
 {% block javascripts %}
-  <script type="text/javascript" src="../static/js/index.js"></script>
+  <script src="./static/js/index.js" type="text/javascript"></script>
 {% endblock javascripts %}
 
 {% block content %}
   <div>Hello, world!</div>
   <div>This is webpack boilerplate.</div>
-  <img src="../img/icon-square-big.png" alt="webpack">
+  <img src="./img/icon-square-big.png" alt="webpack">
   <div>
     <a href="./second.html">Second page</a>
     <svg class="icon">
