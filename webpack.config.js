@@ -1,6 +1,7 @@
 const { join } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
+const SvgStore = require('webpack-svgstore-plugin');
 
 const rootDir = join(__dirname, './');
 
@@ -11,6 +12,7 @@ module.exports = {
     },
     output: {
         path: join(rootDir, './public'),
+        publicPath: '/',
         filename: './static/js/[name].js'
     },
     module: {
@@ -47,5 +49,17 @@ module.exports = {
                 }
             ]
         }),
+        new SvgStore({
+            svgoOptions: {
+                plugins: [
+                    {
+                        removeTitle: true,
+                        removeComments: true,
+                        removeUselessStrokeAndFill: true,
+                    }
+                ]
+            },
+            prefix: 'icon-'
+        })
     ]
 };
