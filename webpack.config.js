@@ -2,8 +2,21 @@ const { join } = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 const SvgStore = require('webpack-svgstore-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const rootDir = join(__dirname, './');
+
+let pathsToClean = [
+    '*.html',
+    'static/css/*.*',
+    'static/js/*.*',
+    'static/svg/*.*'
+]
+let cleanOptions = {
+    root: join(rootDir, './public'),
+    verbose: true,
+    dry: false
+}
 
 module.exports = {
     entry: {
@@ -34,6 +47,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(pathsToClean, cleanOptions),
         new ExtractTextPlugin({
             filename: './static/css/[name].css'
         }),
