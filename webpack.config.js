@@ -66,6 +66,8 @@ module.exports = {
         clientLogLevel: 'none',
         watchOptions: {
             poll: true
-        }
+        },
+        contentBase: join(rootDir, './public'),
+        watchContentBase: true
     }
 };
