@@ -1,11 +1,9 @@
 const { join } = require('path');
-const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 const SvgStore = require('webpack-svgstore-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const NODE_ENV = process.env.NODE_ENV || 'development';
 const rootDir = join(__dirname, './');
 
 let pathsToClean = [
@@ -53,9 +51,6 @@ module.exports = {
         new ExtractTextPlugin({
             filename: './static/css/[name].css'
         }),
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(NODE_ENV)
-        }),
         new NunjucksWebpackPlugin({
             templates: [
                 {
@@ -81,7 +76,6 @@ module.exports = {
             prefix: 'icon-'
         })
     ],
-    devtool: NODE_ENV === 'development' ? 'eval' : null,
     devServer: {
         clientLogLevel: 'none',
         watchOptions: {
