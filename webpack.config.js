@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 const SvgStore = require('webpack-svgstore-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const rootDir = join(__dirname, './');
 
@@ -50,6 +51,9 @@ module.exports = {
         new CleanWebpackPlugin(pathsToClean, cleanOptions),
         new ExtractTextPlugin({
             filename: './static/css/[name].css'
+        }),
+        new StyleLintPlugin({
+            configFile: '.stylelintrc',
         }),
         new NunjucksWebpackPlugin({
             templates: [
