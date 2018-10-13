@@ -76,6 +76,7 @@ module.exports = {
             prefix: 'icon-'
         })
     ],
+    devtool: 'eval',
     devServer: {
         clientLogLevel: 'none',
         watchOptions: {
