@@ -15,3 +15,6 @@ Webpack boilerplate
 
 4. Using nunjucks like html template engine.
 See documentation here: https://mozilla.github.io/nunjucks/. 
+
+
+Project is running on http://localhost:8081/.
