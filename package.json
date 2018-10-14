@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "webpack-boilerplate",
   "version": "1.0.0",
   "description": "Universal boilerplate with Webpack",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "author": "cu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.1.2",
     "babel-core": "7.0.0-bridge.0",
