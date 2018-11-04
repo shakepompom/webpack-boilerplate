@@ -44,7 +44,10 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'eslint-loader'
+                    loader: 'eslint-loader',
+                    options: {
+                        failOnError: false,
+                    }
                 },
             },
             {
@@ -73,7 +76,7 @@ module.exports = {
         }),
         new StyleLintPlugin({
             configFile: '.stylelintrc',
-            failOnError: true,
+            failOnError: false,
         }),
         new NunjucksWebpackPlugin({
             templates: [
